@@ -9,3 +9,5 @@ Route::get('/', function () {
 
 Route::post('/user', [UserController::class, 'store']);
 Route::get('/user', [UserController::class, 'create']);
+
+Route::get('/new', [UserController::class, 'create']);
