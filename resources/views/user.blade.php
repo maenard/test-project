@@ -1,15 +1,20 @@
 <form action="/user" method="POST">
     @csrf
-    <input name="name" type="text" placeholder="name" value="{{ old('name') }}">
+    <input name="name" placeholder="name" value="{{ old('name') }}">
     <br>
     @error('name')
-        <p style="color:red;">{{ $message }}</p>
+        <small style="color: red;">{{ $message }}</small>
     @enderror
+    <br>
 
-    <input name="email" type="text" placeholder="email" value="{{ old('email') }}">
+    <input name="email" placeholder="email" value="{{ old('email') }}">
     <br>
     @error('email')
-        <p style="color:red;">{{ $message }}</p>
+        <small style="color: red;">{{ $message }}</small>
     @enderror
+    <br>
     <input type="submit">
+
 </form>
+
+

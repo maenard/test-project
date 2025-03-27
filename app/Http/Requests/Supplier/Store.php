@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\Supplier;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,17 +22,11 @@ class Store extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:10',
-            'email' => 'required|email|unique:users,email',
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'name.required' => 'required ni sya na field.',
-            'name.max' => 'sobra na imo input.',
-            'email.required' => 'email kay required.',
+            'name' => 'required',
+            'email' => 'required|email|unique:suppliers,email',
+            'contact_num' => 'required',
+            'address' => 'required',
+            'status' => 'nullable',
         ];
     }
 }
