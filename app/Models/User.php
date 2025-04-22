@@ -23,6 +23,21 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class, 'user_id', 'id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'liker_id', 'id');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
